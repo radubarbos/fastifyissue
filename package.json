@@ -1,0 +1,25 @@
+{
+  "name": "fastifyissue",
+  "version": "0.0.1",
+  "description": "Sample for reproducing fastify 4.x issue",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radubarbos/fastifyissue.git"
+  },
+  "author": "radubarbos",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/radubarbos/fastifyissue/issues"
+  },
+  "homepage": "https://github.com/radubarbos/fastifyissue#readme",
+  "scripts": {
+    "start": "node src/start.js"
+  },
+  "dependencies": {
+    "fastify": "^4.12.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

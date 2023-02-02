@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://test/request-config-schema.json",
+  "type": "object",
+  "definitions": {
+    "positionType": {
+      "type": "string",
+      "enum": [
+        "display",
+        "video"
+      ]
+    }
+  },
+  "properties": {
+    "positions": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": {
+        "pattern": "^[a-zA-Z0-9_-]+$"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "description": "Position data required for ad calls.",
+        "properties": {
+          "alias": {
+            "type": "string",
+            "description": "The alias to be used for the ad call.",
+            "pattern": "^[a-zA-Z0-9_]*$"
+          },
+          "type": {
+            "description": "The type of the creative.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/positionType"
+              },
+              {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "$ref": "#/definitions/positionType"
+                }
+              }
+            ],
+            "default": "display"
+          }
+        },
+        "required": []
+      }
+    }
+  },
+  "required": [
+    "positions"
+  ]
+}
